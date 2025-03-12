@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  height:100vh;
+  width:100%;
+  margin-left:250px;
+  padding: 0%;
+  margin-right: 0%;
+}
+
+.scheduleContainer {
+  width: 75%;
+  padding:20px;
+  background-color: #ffffff;
+}
+
+h1 {
+  font-size:36px;
+  margin-bottom: 0%;
+}
+.scheduleHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom:0px;
+}
+
+.scheduleHeader button {
+  height:40px;
+  width: 100px;
+  margin-left: 180px;
+  margin-bottom: 0%;
+  color: #ffffff;
+  background: #0e0f0f;
+  border-radius: 30px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+}
+
+table { 
+    height: 75vh;
+    width:100%;
+    margin-top:30px;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    border:solid 2px #333;
+
+  }
+  
+  thead th {
+    background-color: #adadad;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #000000;
+  }
+  
+  tbody td {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #000000;
+  }
+  
+  td {
+    vertical-align: middle;
+  }
+  
+  td[id*="mon"] {
+    color: #333;
+  }
+  
+  td[id*="the"] {
+    color: #333;
+  }
+  
+  td[id*="web"] {
+    color: #333;
+  }
+  
+  td[id*="thu"] {
+    color: #333;
+  }
+  
+  td[id*="fri"] {
+    color: #333;
+  }
+  
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:hover td {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  
+.homeworkContainer {
+  height: 94vh;
+  align-self: center;
+  width:250px;
+  min-width: 250px;
+  border:1.5px solid gray ;
+  border-radius:  25px;
+}
+
+.homeworkContainer .homeworkTitle {
+  margin-left:15px
+}

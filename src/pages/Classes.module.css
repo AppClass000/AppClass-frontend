@@ -1,0 +1,160 @@
+.container {
+    display:flex;
+    margin-left:250px;
+}
+
+
+.classesContainer {
+    padding: 30px;
+    width:72%;
+    overflow:auto;
+    max-height:100vh;
+    background-color:#FFF;
+    display:block;
+}
+
+
+.classesTitle {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  position:flex;
+  left:5px;
+}
+
+.hittedNumber b {
+   font-size: 30px;
+}
+
+.classesNode {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    height:13vh;
+    width:100%; 
+    display: flex;
+    justify-content: space-between;
+    background-color: #dfdcdcfc;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.30);
+}
+
+.cardContext {
+   display:block;
+   align-items: center;
+   justify-content: center;
+   margin-right: 0%;
+   margin-left:10px
+}
+
+.cardContext .classTitle {
+    margin-bottom: 0px;
+    padding-bottom: 0%;
+}
+
+.cardContext .IsMandatory::after {
+    content:"●";
+    color:rgb(236, 122, 122);
+    margin-left:20px;
+}
+
+
+.cardContext .icons {
+    width: auto;
+    height: auto;
+    margin-top: 0px;
+    padding: 0px;
+    display:flex;
+    gap:8px
+}
+
+.icon {
+    display:flex;
+    align-items: center; 
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right:50px;
+    margin-left: 0px;
+    gap:15px
+}
+
+.detailButton {
+    height:40px;
+    width: 100px;
+    position: relative;
+    display: inline-block;
+    padding: 5px 9px;
+    margin-left:5px;
+    margin-right: 1px;
+    text-decoration: none;
+    color: #000000;
+    background: #acaaaa;
+    border-radius: 30px;
+    
+}
+
+.submitButton {
+    height:40px;
+    width: 100px;
+    position: relative;
+    display: inline-block;
+    padding: 5px 9px;
+    margin-left:1px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #0e0f0f;
+    border-radius: 30px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+}
+
+.filterContainer {
+    background-color: #ffffff;
+    display: block;
+    align-self: center;
+    justify-content: center;
+    height: 94vh;
+    border-radius:25px;
+    border:2px solid gray;
+    width: 20%;
+}
+
+.filterCard {
+    height:6vh;
+    width:100%; 
+    display: flex;
+    justify-content: space-between;
+    background-color: #dfdcdcfc;
+    border-radius: 30px;
+    margin-left: 0;
+    margin-right: 20px;
+    margin-bottom: 18px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.30);
+}
+
+.filterCard:hover {
+    background-color: #c1eef7fc;
+    color: rgb(8, 29, 183);
+}
+
+.filterCard p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filterCard p::before {
+    content:"●";
+    color:rgb(236, 122, 122);
+    font-size:30px;
+    margin-right: 5px;
+    margin-left:2px;
+}
