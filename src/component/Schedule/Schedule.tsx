@@ -1,6 +1,5 @@
 import React from "react";
 import { useSchedule } from "../../hooks/useSchedule";
-
 import { CheckToolAPI } from "../../services/api";
 import Style from "./Schedule.module.css";
 
@@ -11,12 +10,10 @@ const Schedule:React.FC = () => {
     if (Loading) {
         return (<p>Loading...</p>)
     };
-   
-    const getClassName = (key:string) => {
-        return (ScheduleData || [])
-        .filter((data) => data.Schedule === key)
-        .map((data) => data.ClassName)
-        .join(", ") || "なし";
+
+    const getClassName = (schedule:string) => {
+        const registeredClass = ScheduleData.find((item) => item.Schedule === schedule);
+        return registeredClass ?  registeredClass.ClassName : null;
     };
        
     return (

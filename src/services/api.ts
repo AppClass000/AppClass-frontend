@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const API_SCHEDULE_URL = "http://localhost:8080/classes/schedule"
-const API_USERDETAIL_URL = "http://localhost:8080/user/userdetail"
+const API_USERDETAIL_URL = "http://localhost:8080/classes/userdetail"
 const API_CHECKTOOL_URL = "http://localhost:8080/classes/checktool"
+const API_CLASSES_URL = "http://localhost:8080/classes/classes"
 
 
 export const getScheduleData = async <T> ():Promise<T> => {
@@ -11,8 +12,7 @@ export const getScheduleData = async <T> ():Promise<T> => {
         {
             headers:{ "Content-Type": "application/json"},
             withCredentials:true,
-        }
-       )
+        });
         return response.data;
     } catch (error) {
         console.error("missing get scheduleData:",error);
@@ -20,15 +20,30 @@ export const getScheduleData = async <T> ():Promise<T> => {
     }
 }
 
-export const getUserDetail = async () => {
+export const getUserDetail = async <T>():Promise<T> => {
     try {
-        const response = await axios.get(`${API_USERDETAIL_URL}`,{withCredentials:true});
+        const response = await axios.get<T>(`${API_USERDETAIL_URL}`,{withCredentials:true});
         return response.data;
     } catch (error) {
         console.error("missing get userdetail",error);
-        return null;
+        return {} as T;
     }
 };
+
+
+export const fetchClassesData = async <T>():Promise<T> => {
+    try {
+      const response = await axios.get<T>(`${API_CLASSES_URL}`,{
+        withCredentials:true,
+      });
+      console.log(response.data);
+      return  response.data;
+    } catch (error) {
+        console.error("error in fetchClassData:",error);
+        return {} as T;
+    }
+};
+
 
 export const CheckToolAPI = async() => {
     try {

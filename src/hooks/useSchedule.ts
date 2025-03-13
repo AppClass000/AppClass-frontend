@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
-import { ApiResponse,scheduleData } from "../types/type";
+import { ApiResponse,ScheduleData } from "../types/type";
 import { getScheduleData } from "../services/api";
 
 
-export const useSchedule = (): { ScheduleData:scheduleData[],Loading:boolean} => {
+export const useSchedule = (): { ScheduleData:ScheduleData[],Loading:boolean} => {
 
-    const [ScheduleData,setScheduleData] = useState<scheduleData[]>([]);
+    const [ScheduleData,setScheduleData] = useState<ScheduleData[]>([]);
     const [Loading,setLoading] = useState(true);
 
     useEffect(() => {
         const feachData = async () => {
             setLoading(true);
             try {
-                const data = await getScheduleData<ApiResponse<scheduleData[]>>();
-            if (data && data.registered_classes) {
-                setScheduleData(data.registered_classes);
+                const data = await getScheduleData<ApiResponse<ScheduleData[]>>();
+            if (data && data.registeredClasses	) {
+                setScheduleData(data.registeredClasses);
                 setLoading(false);
             }} catch (error) {
             console.error(error);
         } finally {
             setLoading(false)
-        }
-        }
-        feachData()},[]);
+        }}
+    feachData()
+    }, []);
 
 
     return {ScheduleData,Loading};

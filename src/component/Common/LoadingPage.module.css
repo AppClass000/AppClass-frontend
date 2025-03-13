@@ -1,0 +1,10 @@
+.loadingPageContainer {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingPageContainer h1 {
+    border-radius: 20px;
+    border:solid 1.5px black;
+}

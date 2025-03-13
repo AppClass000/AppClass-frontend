@@ -1,6 +1,9 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useUserDetail } from "../hooks/useUserDetail";
+import { LoadingPage } from "../component/Common/LoadingPage";
+import { UserDetailData } from "../types/type";
 import Style from "./UserDetail.module.css";
 
 interface Classes {
@@ -19,6 +22,8 @@ const UserDetail:React.FC = () => {
   const [course,setCourse] = useState('');
   const [submit,setSubmit] = useState(false);
   const navigate = useNavigate();
+
+  const {userDetailData, Loading} =useUserDetail();
 
   const  handleSubmit = async(e :React.FormEvent) => {
     e.preventDefault()
@@ -44,8 +49,21 @@ const UserDetail:React.FC = () => {
       console.log("Error:",error) };
   };
 
+  useEffect(() => {
+    if (
+      userDetailData.Faculty !== "" || 
+      userDetailData.Department !== "" || 
+      userDetailData.Course !== ""
+    ) {
+      setFaculty(userDetailData.Faculty);
+      setDepartment(userDetailData.Department);
+      setCourse(userDetailData.Course);
+    }
+  }, [userDetailData]); 
   
-
+  if (Loading) {
+    return <LoadingPage />
+  };
 
     return (
       <>

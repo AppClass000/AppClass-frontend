@@ -1,13 +1,13 @@
 import React,{ useState } from "react";
 import  Draggable from "react-draggable";
 import Style from "./UserProfile.module.css";
-import { profileData } from "../../types/type";
+import { ProfileData } from "../../types/type";
 import axios from "axios";
 
 
 const UserProfile:React.FC = () => {
 
-    const [profile,setProfile] = useState<profileData>({
+    const [profile,setProfile] = useState<ProfileData>({
         name:"",
         email:"",
         avatar:"",
