@@ -8,14 +8,14 @@
 }
 
 .scheduleContainer {
-  width: 75%;
+  width: 77%;
   padding:20px;
   background-color: #ffffff;
 }
 
-h1 {
+.scheduleTitle {
   font-size:36px;
-  margin-bottom: 0%;
+  margin-bottom: 30px;
 }
 .scheduleHeader {
   display: flex;
@@ -23,16 +23,17 @@ h1 {
   margin-bottom:0px;
 }
 
-.scheduleHeader button {
-  height:40px;
-  width: 100px;
-  margin-left: 180px;
-  margin-bottom: 0%;
+.CheckTool {
+  height:60px;
+  width: 120px;
+  margin-left: 250px;
+  margin-bottom: 15px;
   color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
   background: #0e0f0f;
   border-radius: 30px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-  font-weight: bold;
 }
 
 table { 
@@ -41,67 +42,59 @@ table {
     margin-top:30px;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
-    border:solid 2px #333;
+    border:solid 2px #dfd9d9;
+    table-layout: fixed; /* テーブルのレイアウトを固定 */
 
   }
   
   thead th {
-    background-color: #adadad;
+    background-color: #cbcbcb;
     font-weight: bold;
     text-align: center;
-    padding: 10px;
-    border: 1px solid #000000;
+    height: 60px;
+    padding: 5px;
   }
   
   tbody td {
     text-align: center;
     padding: 15px;
-    border: 1px solid #000000;
+    border: 1.6px solid #d8d8d8;
   }
   
   td {
     vertical-align: middle;
+    width: 100px; /* 必要に応じて調整 */
+    height:100px;
+    text-align: center;
+    word-break: break-word; /* 文字が長い場合に折り返す */
+    white-space: normal; /* 余白を詰めて折り返す */
+    overflow: hidden; /* はみ出る文字を隠す */
+    padding: 5px;
   }
-  
-  td[id*="mon"] {
-    color: #333;
+
+  .timeTable {
+    width: 150px;
+    background-color:#e7e7e7;
   }
-  
-  td[id*="the"] {
-    color: #333;
-  }
-  
-  td[id*="web"] {
-    color: #333;
-  }
-  
-  td[id*="thu"] {
-    color: #333;
-  }
-  
-  td[id*="fri"] {
-    color: #333;
-  }
-  
-  tbody tr:nth-child(even) td {
-    background-color: #f9f9f9;
-  }
-  
-  tbody tr:hover td {
-    background-color: #f1f1f1;
+
+
+  .tableCell:hover {
+    background-color: #c1eef7fc;
+    border-radius: 15px;
     cursor: pointer;
   }
-  
+
   
 .homeworkContainer {
   height: 94vh;
   align-self: center;
   width:250px;
   min-width: 250px;
-  border:1.5px solid gray ;
+  margin-left: 20px;
+  border:2px solid gray ;
   border-radius:  25px;
 }
 
 .homeworkContainer .homeworkTitle {
-  margin-left:15px
+  margin:15px;
 }

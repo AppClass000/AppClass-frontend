@@ -5,7 +5,11 @@ export interface ApiResponse<T>  {
 
 export type ScheduleData = {
     ClassName: string;
+    ClassID: number
+    Instructor: string;
     Schedule: string;
+    Location: string;
+    IsMandatory: boolean;
 };
 
 export type UserDetailData = {
@@ -17,10 +21,11 @@ export type UserDetailData = {
 
 export type  ClassesData = {
     ClassName: string;
+    ClassID: number
     Instructor: string;
     Schedule: string;
     Location: string;
-    IsMandatory: number;
+    IsMandatory: boolean;
 }
 
 

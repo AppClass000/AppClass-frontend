@@ -69,7 +69,7 @@ const UserDetail:React.FC = () => {
       <>
         <div className={Style.userdetail}>
           <form onSubmit={handleSubmit} id="userform">
-            <h1>あなたの情報を教えてください</h1>
+            <h1 className={Style.userDetailTitle}>あなたの情報を教えてください</h1>
             <div className={Style.uiForm}>
               <label htmlFor="faculty">学部</label>
               <input type="text" name="faculty" id="faculty"

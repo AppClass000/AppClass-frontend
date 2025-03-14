@@ -24,7 +24,7 @@ const LoginForm:React.FC = () => {
     return (
         <div className={Style.formContainer}>
             <form onSubmit={loginHandle}>
-                <h1>AppClassにログイン</h1>
+                <h1 className={Style.formTitle}>AppClassにログイン</h1>
                 <hr />
                 <div className={Style.uiForm}>
                     <div className={Style.formField}>

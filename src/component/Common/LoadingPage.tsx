@@ -5,6 +5,7 @@ export const LoadingPage:React.FC =() => {
     return (
         <div className={Style.loadingPageContainer}>
             <h1>Loading...</h1>
+            <hr />
         </div>
     )
 }

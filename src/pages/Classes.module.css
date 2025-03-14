@@ -1,12 +1,13 @@
 .container {
     display:flex;
-    margin-left:250px;
+    width:100%;
+    margin-left:300px; 
+    gap:15px;
 }
 
 
 .classesContainer {
-    padding: 30px;
-    width:72%;
+    width: 75%;
     overflow:auto;
     max-height:100vh;
     background-color:#FFF;
@@ -15,14 +16,17 @@
 
 
 .classesTitle {
-  margin-top: 0%;
-  margin-bottom: 0%;
   position:flex;
   left:5px;
+  font-size:35px;
+  margin-top:15px;
 }
 
+.hittedNumber {
+    margin-top: 15px;
+}
 .hittedNumber b {
-   font-size: 30px;
+   font-size: 35px;
 }
 
 .classesNode {
@@ -34,7 +38,7 @@
 
 .card {
     height:13vh;
-    width:100%; 
+    width:90%; 
     display: flex;
     justify-content: space-between;
     background-color: #dfdcdcfc;
@@ -47,12 +51,14 @@
    display:block;
    align-items: center;
    justify-content: center;
-   margin-right: 0%;
-   margin-left:10px
+   margin-top: 15px;
+   margin-left:18px;
+   box-sizing: border-box;
 }
 
 .cardContext .classTitle {
-    margin-bottom: 0px;
+    font-size: 20px;
+    margin-bottom: 10px;
     padding-bottom: 0%;
 }
 
@@ -66,10 +72,11 @@
 .cardContext .icons {
     width: auto;
     height: auto;
-    margin-top: 0px;
+    margin-top: 15px;
+    margin-bottom: 0px;
     padding: 0px;
     display:flex;
-    gap:8px
+    gap:12px
 }
 
 .icon {
@@ -122,14 +129,15 @@
     align-self: center;
     justify-content: center;
     height: 94vh;
+    width: 250px;
+    margin-left: 20px;
     border-radius:25px;
     border:2px solid gray;
-    width: 20%;
 }
 
 .filterCard {
     height:6vh;
-    width:100%; 
+    width:95%; 
     display: flex;
     justify-content: space-between;
     background-color: #dfdcdcfc;
@@ -157,4 +165,13 @@
     font-size:30px;
     margin-right: 5px;
     margin-left:2px;
+}
+
+.filterTitle {
+    margin: 10px;
+}
+
+.descriptonFilter {
+  margin: 12px;
+  margin-bottom: 40px;
 }

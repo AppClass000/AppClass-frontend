@@ -32,7 +32,7 @@ const Classes:React.FC = () => {
 
 
     const classesNode = classesData.map((classItem:ClassesData,index:any) => {
-      const isMandatory= classItem.IsMandatory === 1 ? Style.IsMandatory : "";
+      const isMandatory= classItem.IsMandatory  ? Style.IsMandatory : "";
 
      return(
         <div className={Style.card} key={index} >
@@ -86,8 +86,8 @@ const Classes:React.FC = () => {
           </div>
         </div>
         <div className={Style.filterContainer}>
-          <h3>フィルター</h3>
-          <p>授業を絞り込むことが出来ます(複数選択可)</p>
+          <h3 className={Style.filterTitle}>フィルター</h3>
+          <p className={Style.descriptonFilter}>授業を絞り込むことが出来ます(複数選択可)</p>
           <button className={Style.filterCard} >
             <p>必修科目のみ</p>
           </button>

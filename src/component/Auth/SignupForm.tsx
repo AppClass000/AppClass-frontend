@@ -26,7 +26,7 @@ const SignupForm:React.FC = () => {
     return (
         <div className={Style.formContainer}>
             <form  onSubmit={submitHandle}>
-                <h1>アカウント作成</h1>
+                <h1 className={Style.formTitle}>アカウント作成</h1>
                 <hr />
                 <div className={Style.uiForm}>
                     <div className={Style.formField}>
