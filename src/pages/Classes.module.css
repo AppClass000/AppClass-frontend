@@ -68,6 +68,11 @@
     margin-left:20px;
 }
 
+.cardContext .IsCore::after {
+    content:"●";
+    color:rgb(122, 213, 236);
+    margin-left:20px;
+}
 
 .cardContext .icons {
     width: auto;
@@ -159,12 +164,41 @@
     justify-content: center;
 }
 
-.filterCard p::before {
+.isMandatoryText::before {
     content:"●";
     color:rgb(236, 122, 122);
     font-size:30px;
     margin-right: 5px;
-    margin-left:2px;
+    margin-left
+    :2px;
+}
+
+.isCoreText::before {
+    content:"●";
+    color:rgb(122, 213, 236);
+    font-size:30px;
+    margin-right: 5px;
+    margin-left
+    :2px;
+}
+
+.isCommonText::before {
+    content:"●";
+    color:rgb(244, 248, 131);
+    font-size:30px;
+    margin-right: 5px;
+    margin-left
+    :2px;
+}
+
+.isIntroductoryText::before {
+    content:"●";
+    color:rgb(145, 248, 131);
+    font-size:30px;
+    margin-right: 5px;
+    margin-left
+    :2px;
+
 }
 
 .filterTitle {

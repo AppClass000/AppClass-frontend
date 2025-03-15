@@ -12,7 +12,7 @@
     position:fixed;
     top:50%;
     left:50%;
-    width: 300px;
+    width: 400px;
     padding: 20px;
     transform:translate(-50%,-50%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -20,6 +20,65 @@
     border-radius: 15px;
     z-index:113;
 }
+.modalHeaders {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+}
+
+.modalCloseButton {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+
+.modalTitle {
+    flex: 1;  
+    font-size: 1.5rem;
+}
+
+.modalClassID {
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.modalRows {
+    margin-top:10px;
+}
 
 
 
+.modalButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+
+
+.modalDetailButton {
+    height:35px;
+    width: 80px;
+    position: relative;
+    display: inline-block;
+    color: #000000;
+    background: #acaaaa;
+    border-radius: 30px;
+    
+}
+
+
+.deleteRegiseredClass {
+    height:35px;
+    width: 80px;
+    position: relative;
+    display: inline-block;
+    color: #000000;
+    background: #ffb1f6;
+    border-radius: 30px;
+    
+}

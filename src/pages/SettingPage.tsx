@@ -8,19 +8,18 @@ const SettingPage:React.FC = () => {
     const { Logout } = useAuth();
     return (
         <div className={Style.settingPageContainer}>
-            <button  type="button" onClick={() => navigate(-1) }>閉じる</button>
-
+          <button  type="button" className={Style.settingPageClose} onClick={() => navigate(-1) }>&times;</button>
+          <div className={Style.settigPageContent} > 
+            <h1>設定</h1>
             <div className={Style.settingCard} >
-              <h1>設定</h1>
-              <div className={Style.userDetail}>
-            <h1>ユーザー詳細</h1>
-              </div>
-              <div className={Style.userAccount}>
-                <h1>アカウント設定</h1>
-              </div>
-
+              <ul className={Style.settigRows}>
+                <li className={Style.settigRow}>ユーザー詳細</li>
+                <li className={Style.settigRow}>アカウント設定</li>
+              </ul>
+              <button onClick={Logout} className={Style.logoutButton}>ログアウト</button>
             </div>
-            <button onClick={Logout} className={Style.logoutButton}>ログアウト</button>
+          </div>
+          
         </div>
     )
 }

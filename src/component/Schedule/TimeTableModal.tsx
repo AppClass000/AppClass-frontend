@@ -30,19 +30,23 @@ const TimeTableModal:React.FC<ModalProps> = ({isOpen,onClose,selectedClass}) => 
     return (
         <div className={Style.modalOverLay} >
             <div className={Style.modalContent}>
-                <h2 className={Style.modalTitle}>{selectedClass.ClassName}</h2>
+                <div className={Style.modalHeaders}>
+                    <h2 className={Style.modalTitle}>{selectedClass.ClassName}</h2>
+                    <button className={Style.modalCloseButton} onClick={onClose}>&times;</button>
+                </div>        
                 <p className={Style.modalClassID}>時間割コード:{selectedClass.ClassID}</p>
-                <button className={Style.modalCloseButton} onClick={onClose}>&times;</button>
                 <hr />
                 <ul className={Style.modalRows}>
-                    <li className={Style.modalRows} >・担当教員:{selectedClass.Instructor}</li>
-                    <li className={Style.modalRows}>・開口場所:{selectedClass.Location}</li>
-                    <li className={Style.modalRows}>・時限:{selectedClass.Schedule}</li>
-                    <li className={Style.modalRows}>・単位数:{2}</li>
+                    <li className={Style.modalRow} >担当教員:{selectedClass.Instructor}</li>
+                    <li className={Style.modalRow}>開講場所:{selectedClass.Location}</li>
+                    <li className={Style.modalRow}>時限:{selectedClass.Schedule}</li>
+                    <li className={Style.modalRow}>単位数:{2}</li>
                 </ul>
-            <button className={Style.deleteRegiseredClass} onClick={() => handleDeleteSchedule(selectedClass)}>削除</button>
-            <button className={Style.detailClassesButton}>詳細</button>
-            </div>
+                <div className={Style.modalButtons} >
+                    <button className={Style.deleteRegiseredClass} onClick={() => handleDeleteSchedule(selectedClass)}>削除</button>
+                    <button className={Style.modalDetailButton}>詳細</button>
+                </div>           
+           </div>
         </div>
     );
 };

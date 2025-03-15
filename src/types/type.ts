@@ -9,7 +9,6 @@ export type ScheduleData = {
     Instructor: string;
     Schedule: string;
     Location: string;
-    IsMandatory: boolean;
 };
 
 export type UserDetailData = {
@@ -26,6 +25,9 @@ export type  ClassesData = {
     Schedule: string;
     Location: string;
     IsMandatory: boolean;
+    IsCore: boolean;
+    IsIntroductory :boolean
+    IsCommon:boolean;
 }
 
 
@@ -39,4 +41,3 @@ export type ProfileData = {
     email:string,
     avatar:string
 }
- 

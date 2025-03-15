@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ScheduleData } from "../types/type";
 
 const API_SCHEDULE_URL = "http://localhost:8080/classes/schedule"
 const API_DELETE_SCHEDULE_URL = "http://localhost:8080/classes/delete"
@@ -21,10 +22,10 @@ export const getScheduleData = async <T> ():Promise<T> => {
     }
 }
 
-export const deleteScheduleData = async <T>(data: T) => {
+export const deleteScheduleData = async <T>(data:T) => {
     try {
         const response = await axios.post(`${API_DELETE_SCHEDULE_URL}`,
-        {data},
+        data,
             {
                 headers: {"Content-Type":"application/json"},
                 withCredentials:true,
