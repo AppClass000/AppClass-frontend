@@ -1,11 +1,12 @@
 import axios from "axios";
-import { ScheduleData } from "../types/type";
 
 const API_SCHEDULE_URL = "http://localhost:8080/classes/schedule"
 const API_DELETE_SCHEDULE_URL = "http://localhost:8080/classes/delete"
-const API_USERDETAIL_URL = "http://localhost:8080/classes/userdetail"
+const API_USERDETAIL_URL = "http://localhost:8080/user/userdetail"
 const API_CHECKTOOL_URL = "http://localhost:8080/classes/checktool"
 const API_CLASSES_URL = "http://localhost:8080/classes/classes"
+const API_PROFILE_URL =  "http://localhost:8080/user/profile"
+
 
 
 export const getScheduleData = async <T> ():Promise<T> => {
@@ -80,3 +81,16 @@ export const CheckToolAPI = async() => {
         return [] 
     }
 }
+
+export const getProfileUserID = async <T>():Promise<T> => {
+   
+    try {
+         const response = await axios.get<T>(`${API_PROFILE_URL}`,{
+        withCredentials:true,
+        });
+        return response.data;
+    } catch (error) {
+        console.error("error in",error);
+        return {} as T;
+    };
+};

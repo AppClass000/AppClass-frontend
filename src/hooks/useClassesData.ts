@@ -3,7 +3,6 @@ import { fetchClassesData } from "../services/api";
 import { ClassesData,ApiResponseUserClass } from "../types/type";
 
 
-
 export const useClassesData = () : {classesData:ClassesData[],Loading:boolean} => {
     const [classesData,setClassesData] = useState<ClassesData[]>([])
     const [Loading,setLoading] = useState(true);

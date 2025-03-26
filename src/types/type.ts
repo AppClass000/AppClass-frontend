@@ -9,7 +9,17 @@ export type ScheduleData = {
     Instructor: string;
     Schedule: string;
     Location: string;
+    IsMandatory: boolean;
+    IsCore: boolean;
+    IsIntroductory :boolean
+    IsCommon:boolean;
 };
+
+
+export type UserDetailDataResponse = {
+    message:string,
+    userdetail:UserDetailData
+}
 
 export type UserDetailData = {
     Faculty: string,

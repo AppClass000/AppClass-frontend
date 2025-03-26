@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const SettingPage:React.FC = () => {
+  alert("※このページは実装段階です、リリースまでお待ちください")
     const navigate = useNavigate();
     const { Logout } = useAuth();
     return (
@@ -13,8 +14,9 @@ const SettingPage:React.FC = () => {
             <h1>設定</h1>
             <div className={Style.settingCard} >
               <ul className={Style.settigRows}>
-                <li className={Style.settigRow}>ユーザー詳細</li>
-                <li className={Style.settigRow}>アカウント設定</li>
+                <a className={Style.settigRow} href="/userdetail" >ユーザー詳細</a>
+                <a className={Style.settigRow}>アカウント設定</a>
+
               </ul>
               <button onClick={Logout} className={Style.logoutButton}>ログアウト</button>
             </div>

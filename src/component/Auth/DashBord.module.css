@@ -1,0 +1,118 @@
+.dashBordOverLay {
+    width: 100%;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    }      
+
+
+.dashBordContainer {
+    background: linear-gradient(to bottom right, #ffffff, #f4ffff);
+    padding: 40px;
+    height: 60vh;
+    width: 450px;
+    border-radius: 10px;
+    border:1px solid #dfdfdf;
+    -webkit-box-shadow: 3px 10px 13px 0px rgba(214,214,214,1);
+    -moz-box-shadow: 3px 10px 13px 0px rgba(214,214,214,1);
+    box-shadow: 3px 10px 13px 0px rgba(214,214,214,1);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+
+.formOverLay {
+    width: 100%;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index:99;
+}
+
+
+
+.formContainer {
+    display:felx;
+    flex-direction: column;
+    z-index: 100;
+}
+
+
+.dashBordTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.registeredButton {
+    height: 45px;
+    width: 200px;
+    color: #ffffff;
+    background: linear-gradient(to right, #0097b2, #7ed957);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 151, 178, 0.3);
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.registeredButton:hover {
+    background: linear-gradient(to right, #007a91, #69c747);
+    box-shadow: 0 6px 10px rgba(0, 151, 178, 0.4);
+}
+
+.setStepButton {
+    height: 45px;
+    width: 150px;
+    color: #ffffff;
+    background: #aaaaaa;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.setStepButton:hover {
+    background: #888888;
+}
+
+.uiForm .formField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.uiForm label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.uiForm input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.uiForm input:focus {
+    border-color: #0097b2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 151, 178, 0.3);
+}

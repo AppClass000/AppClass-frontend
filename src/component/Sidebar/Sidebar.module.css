@@ -23,14 +23,14 @@
 }
 
 .SidebarContainer {
-    background-color: #dfdcdcfc;
+    background-color: #e3e3e3;
     height: 100vh;
     width:250px;
     margin-right :100px;
     position:fixed;
     left:0%;
     top:0%;
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 .SidebarContainer .timeTable {
@@ -40,18 +40,17 @@
 
 .SidebarRow {
     height:8vh;
-    width: 95%;
+    width: 100%;
     align-items: center;
     display:flex;
     margin-top:10px ;
-    margin-left:10px;
     margin-bottom: 0;
     font-size:17px;
     gap:8px;
 }
 
 .SidebarRow:hover {
-    background-color: #959191;
+    background-color: #c5c5c5;
     border-radius:15px;
 }
 .SidebarFoot  {
@@ -61,6 +60,10 @@
     height:10vh;
 }
 
+.selected {
+    background-color: #c5c5c5;
+    border-radius:15px;
+}
 
 .SidebarContainer button {
     height:40px;
@@ -81,3 +84,4 @@ a {
   a:visited {
     color: #333;
   }
+

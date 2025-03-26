@@ -5,6 +5,8 @@
     top:50%;
     left:50%;
     padding: 20px;
+    background: linear-gradient(to bottom right, #ffffff, #f4ffff);   
+
     transform:translate(-50%,-50%);
     border-radius: 15px;
     border:solid 2px black;
@@ -33,9 +35,15 @@
 .logoutButton {
     height:40px;
     width: 100px;
-    color: #ffffff;
-    background: #0e0f0f;
+    color: #000000;
+    background: #aaaaaa;
     border-radius: 30px;
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
     font-weight: bold;
+}
+
+.logoutButton:hover {
+    background-color: #c1eef7fc;
+    color:#000000;
+
 }

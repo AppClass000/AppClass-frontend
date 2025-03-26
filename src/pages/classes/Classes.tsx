@@ -1,14 +1,19 @@
+
 import React, { useState, useMemo } from "react";
-import { ClassesData } from "../types/type";
+import { ClassesData } from "../../types/type";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import axios from "axios";
 import Style from "./Classes.module.css";
-import { useClassesData } from "../hooks/useClassesData";
-import { LoadingPage } from "../component/Common/LoadingPage";
+import { useClassesData } from "../../hooks/useClassesData";
+import { LoadingPage } from "../../component/Common/LoadingPage";
+import { useUserData } from "../../contexts/UserDataContext";
+
 
 const Classes: React.FC = () => {
+  const { profile } = useUserData()
+
   const { classesData, Loading } = useClassesData();
 
   const [filter, setFilter] = useState({
@@ -18,6 +23,7 @@ const Classes: React.FC = () => {
     isIntroductory: false,
   });
 
+  
   const toggleFilter = (key: keyof typeof filter) => {
     setFilter((prev) => ({
       ...prev,
@@ -64,13 +70,14 @@ const Classes: React.FC = () => {
   return (
     <div className={Style.container}>
       <div className={Style.classesContainer}>
-        <h1 className={Style.classesTitle}>Tech-Clubさんの授業リスト</h1>
+        <h1 className={Style.classesTitle}>{profile.name}さんの授業リスト</h1>
         <hr />
         <p className={Style.hittedNumber}>
           現在<b>{filteredClasses.length}</b>件ヒットしました
         </p>
         <div className={Style.classesNode}>
           {filteredClasses.map((classItem, index) => {
+
             const isMandatory = classItem.IsMandatory ? Style.IsMandatory : "";
             const isCore = classItem.IsCore ? Style.IsCore : "";
             return (
@@ -97,9 +104,9 @@ const Classes: React.FC = () => {
                 <div className={Style.buttonContainer}>
                   <button className={Style.detailButton}>詳細</button>
                   <button
-                    className={Style.submitButton}
+                    className={`${Style.submitButton}`}
                     type="submit"
-                    onClick={() => registerClassData(classItem)}
+                    onClick={() => {registerClassData(classItem)}  }
                   >
                     登録
                   </button>
@@ -114,25 +121,25 @@ const Classes: React.FC = () => {
         <h3 className={Style.filterTitle}>フィルター</h3>
         <p className={Style.descriptonFilter}>授業を絞り込むことが出来ます(複数選択可)</p>
         <button
-          className={`${Style.filterCard} ${filter.isMandatory ? Style.active : ""}`}
+          className={`${Style.filterCard} ${filter.isMandatory ? Style.active : ""}  ${filter.isMandatory && Style.selectedFilter}`}
           onClick={() => toggleFilter("isMandatory")}
         >
           <p className={Style.isMandatoryText}>必修科目のみ</p>
         </button>
         <button
-          className={`${Style.filterCard} ${filter.isCore ? Style.active : ""}`}
+          className={`${Style.filterCard} ${filter.isCore ? Style.active  : ""} ${filter.isCore && Style.selectedFilter}`}
           onClick={() => toggleFilter("isCore")}
         >
           <p className={Style.isCoreText}>基幹科目のみ</p>
         </button>
         <button
-          className={`${Style.filterCard} ${filter.isCommon ? Style.active : ""}`}
+          className={`${Style.filterCard} ${filter.isCommon ? Style.active : ""}  ${filter.isCommon && Style.selectedFilter}`}
           onClick={() => toggleFilter("isCommon")}
         >
           <p className={Style.isCommonText}>共通・教養科目のみ</p>
         </button>
         <button
-          className={`${Style.filterCard} ${filter.isIntroductory ? Style.active : ""}`}
+          className={`${Style.filterCard} ${filter.isIntroductory ? Style.active : ""}  ${filter.isIntroductory && Style.selectedFilter}`}
           onClick={() => toggleFilter("isIntroductory")}
         >
           <p className={Style.isIntroductoryText}>導入科目のみ</p>

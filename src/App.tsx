@@ -1,15 +1,17 @@
-import { Suspense } from "react";
 import { BrowserRouter as Router} from "react-router-dom"
 import { AuthProvider } from "./contexts/AuthContext"
-import Approute from "./routes/index"
+import { UserDataProvider } from "./contexts/UserDataContext";
+import Approute from "./routes/AppRoute"
  
 
 export const App:React.FC = () => {
   return (
     <AuthProvider>
-      <Router >
-          <Approute />
-      </Router>
+      <UserDataProvider >
+        <Router >
+            <Approute />
+        </Router>
+      </UserDataProvider>
     </AuthProvider>
   )
 }

@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 import { getUserDetail } from "../services/api";
-import { UserDetailData } from "../types/type"
+import { UserDetailData ,UserDetailDataResponse } from "../types/type"
 
 
 export const useUserDetail =  () => {
@@ -10,9 +10,9 @@ export const useUserDetail =  () => {
     useEffect(() => {
         const feachData = async () => {
             try {
-              const responsedata =  await getUserDetail<UserDetailData>();
+              const responsedata =  await getUserDetail<UserDetailDataResponse>();
               if (responsedata !== null) {
-                  setUserDetailData(responsedata);
+                  setUserDetailData(responsedata.userdetail);
                   setLoading(false);
               };
               setLoading(false)

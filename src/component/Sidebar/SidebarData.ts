@@ -4,6 +4,7 @@ import CoPresentIcon from '@mui/icons-material/CoPresent';
 import SettingsIcon from '@mui/icons-material/Settings';
 import EmailIcon from '@mui/icons-material/Email';
 import LanguageIcon from '@mui/icons-material/Language';
+import SchoolIcon from '@mui/icons-material/School';
 import ClassIcon from '@mui/icons-material/Class';
 import { ComponentType, ReactNode } from 'react';
 
@@ -27,7 +28,7 @@ export const SidebarData:SidebarItem[] = [
     {
         icon: CoPresentIcon,
         title:'学生情報',
-        link:'/userdetail',
+        link:'/index',
     },
     {
         icon: LanguageIcon,
@@ -38,7 +39,8 @@ export const SidebarData:SidebarItem[] = [
         icon: ClassIcon,
         title:'CAMPUS SQUARE',
         link:'/canpusquare',
-    }
+    },
+ 
 ];
 
 export const FooterData:SidebarItem[] = [

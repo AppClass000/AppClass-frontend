@@ -3,6 +3,7 @@ import axios from "axios";
 
 interface AuthContextType {
     loggedIn:boolean | null;
+    setLoggedIn:(loggedIn:boolean) => void ;
     Login: (email:string,password:string) => Promise<boolean>;
     Logout: () => void;
 };
@@ -64,7 +65,7 @@ export const AuthProvider = ({children}:{children:ReactNode}) => {
     };
 
     return (
-        <AuthContext.Provider value={{loggedIn, Login, Logout}} >
+        <AuthContext.Provider value={{loggedIn, Login, Logout, setLoggedIn}} >
             {children}
         </AuthContext.Provider>
     );
