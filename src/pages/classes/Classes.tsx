@@ -58,6 +58,7 @@ const Classes: React.FC = () => {
         alert("登録済みです");
       }
       console.log("classData送信に成功しました");
+      alert("登録されました")
     } catch (error) {
       console.error("classData送信エラー", classData);
       alert("授業登録失敗しました。再送信して下さい。");

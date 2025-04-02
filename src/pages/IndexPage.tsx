@@ -1,13 +1,16 @@
 import React ,{ useEffect } from "react";
 import Style from "./IndexPage.module.css";
-import { useUserData } from "../contexts/UserDataContext";
 import { useUserDetail } from "../hooks/useUserDetail";
 import { getProfileUserID } from "../services/api";
 import SchoolIcon from '@mui/icons-material/School';
 import { ProfileData } from "../types/type";
 
-const IndexPage:React.FunctionComponent = () => {
-    const { profile,setProfile } = useUserData();
+interface IndexPageProps {
+  profile:ProfileData
+  setProfile:React.Dispatch<React.SetStateAction<ProfileData>>
+}
+
+const IndexPage:React.FunctionComponent<IndexPageProps> = ({profile,setProfile}) => {
     const { userDetailData } = useUserDetail();
     
 
@@ -25,7 +28,7 @@ const IndexPage:React.FunctionComponent = () => {
     };
 
     fetchData();
-  },[])
+  },[profile])
 
     return (
       <div className={Style.indexPageContainer}>

@@ -6,19 +6,22 @@ import { deleteScheduleData } from "../../services/api";
 interface ModalProps {
     isOpen:boolean;
     onClose:() => void;
+    setScheduleData:React.Dispatch<React.SetStateAction<ScheduleData[]>>;
     selectedClass:ScheduleData | null ;
 }
 
-const TimeTableModal:React.FC<ModalProps> = ({isOpen,onClose,selectedClass}) => {
+const TimeTableModal:React.FC<ModalProps> = ({isOpen,onClose,selectedClass,setScheduleData}) => {
 
-    const  handleDeleteSchedule = async (data : ScheduleData) => {
+    const  handleDeleteSchedule = async (data : ScheduleData):Promise<boolean>  => {
         const responseData =  await deleteScheduleData(data);
         if (responseData === "error") {
             alert("削除に失敗しました")
-            return ;
+            return false ;
         }
+
+        setScheduleData((prev) => (prev).filter((item) => item.ClassID != data.ClassID))
         alert("削除しました")
-        return ;
+        return true ;
     }
 
     if (!isOpen || !selectedClass ) {

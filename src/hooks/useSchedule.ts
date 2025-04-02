@@ -3,7 +3,7 @@ import { ApiResponse,ScheduleData } from "../types/type";
 import { getScheduleData } from "../services/api";
 
 
-export const useSchedule = (): { ScheduleData:ScheduleData[],Loading:boolean} => {
+export const useSchedule = (): { ScheduleData:ScheduleData[],setScheduleData: React.Dispatch<React.SetStateAction<ScheduleData[]>>,Loading:boolean} => {
 
     const [ScheduleData,setScheduleData] = useState<ScheduleData[]>([]);
     const [Loading,setLoading] = useState(true);
@@ -22,8 +22,8 @@ export const useSchedule = (): { ScheduleData:ScheduleData[],Loading:boolean} =>
             setLoading(false)
         }}
     feachData()
-    }, []);
+    }, [ScheduleData]);
 
 
-    return {ScheduleData,Loading};
+    return {ScheduleData,Loading,setScheduleData};
 };

@@ -1,10 +1,10 @@
-
+import { useEffect } from "react";
 import { Routes, Route, Navigate,useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import useFetchProfile from "../hooks/useFetchProfile";
 import { useUserData } from '../contexts/UserDataContext';
 import Sidebar from '../component/Sidebar/Sidebar'
 import SettingPage from "../pages/SettingPage";
-import SignupForm from '../component/Auth/Signup/SignupForm';
 import LoginForm from '../component/Auth/Login/LoginForm';
 import Classes from '../pages/classes/Classes';
 import Schedule from '../component/Schedule/Schedule';
@@ -16,7 +16,8 @@ const Approute: React.FC = () => {
   const location = useLocation();
   const hideSidebar = location.pathname === "/setting";
   const { loggedIn } = useAuth(); 
-  const { profile } = useUserData();
+  const { profile,setProfile} = useUserData();
+  useFetchProfile();
 
   if (loggedIn === null) {
     return <p>Loading...</p>
@@ -37,7 +38,7 @@ const Approute: React.FC = () => {
               <Route path='/classes' element={<Classes />} />
               <Route path='/userdetail' element={<UserDetail />} />
               <Route path='/schedule' element={<Schedule />} />
-              <Route path='/index' element={<IndexPage />} />
+              <Route path='/index' element={<IndexPage profile={profile} setProfile={setProfile}/>} />
               <Route path='/setting' element={<SettingPage />} />
               <Route path='*'  element={<Navigate to={"/index"}/>}  />
             </Routes>

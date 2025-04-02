@@ -9,9 +9,8 @@ import { useUserData } from "../../contexts/UserDataContext";
 const Schedule:React.FC = () => {
     const { profile } = useUserData()
 
-    const { ScheduleData, Loading } = useSchedule();
+    const { ScheduleData,setScheduleData, Loading } = useSchedule();
     const [resisteredClass,setRegisteredClass] = useState<ScheduleData | null>(null);
-    const [isPropaty,setIsPropaty] = useState()
     const [isOpenModal,setOpenModal] = useState(false);
 
     const onCloseModal = () => {
@@ -105,7 +104,7 @@ const Schedule:React.FC = () => {
         <div className={Style.homeworkContainer}>
             <h3 className={Style.homeworkTitle}>宿題リスト</h3>
         </div>
-        <TimeTableModal isOpen={isOpenModal} onClose={onCloseModal} selectedClass={resisteredClass} />
+        <TimeTableModal isOpen={isOpenModal} onClose={onCloseModal} selectedClass={resisteredClass} setScheduleData={setScheduleData} />
       </div>
     );
 };
