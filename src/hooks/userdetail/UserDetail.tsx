@@ -1,9 +1,7 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useUserDetail } from "../../hooks/useUserDetail";
-import { LoadingPage } from "../../component/Common/LoadingPage";
-import { UserDetailData } from "../../types/type";
+
 import Style from "./UserDetail.module.css";
 import { useAuth } from "../../contexts/AuthContext";
 

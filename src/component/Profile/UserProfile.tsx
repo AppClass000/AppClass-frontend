@@ -69,7 +69,7 @@ const UserProfile:React.FC<ModalProps> = ({onClose,isOpen}) => {
         <div className={Style.profileModalOverLay} onClick={onClose}>
             <div className={Style.cardContainer} onClick={(e) => e.stopPropagation()}>
                 <button className={Style.closeButton} onClick={onClose}>&times;</button>
-                <div className={Style.card}>
+              <div className={Style.card}>
                     <div className={Style.profileImageContainer}>
                         <img 
                             className={Style.profileImage} 
@@ -80,10 +80,8 @@ const UserProfile:React.FC<ModalProps> = ({onClose,isOpen}) => {
                             accept="image/*"
                             onChange={fileSetImageHandle}
                         />
-                    </div>
-                    <button className={Style.imageUploadButton} onClick={uploadImage}>
-                        決定
-                    </button>
+                    </div> 
+                
 
                     <div className={Style.inputGroup}>
                         <label>名前</label>
@@ -103,7 +101,10 @@ const UserProfile:React.FC<ModalProps> = ({onClose,isOpen}) => {
                             value={profile.email}
                             onChange={changeHandle}
                         />
-                    </div>
+                    </div>    
+                    <button className={Style.imageUploadButton} onClick={uploadImage}>
+                        決定
+                    </button>
                 </div>
             </div>
         </div>

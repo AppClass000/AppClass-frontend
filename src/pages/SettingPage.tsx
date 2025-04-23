@@ -4,7 +4,6 @@ import { useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const SettingPage:React.FC = () => {
-  alert("※このページは実装段階です、リリースまでお待ちください")
     const navigate = useNavigate();
     const { Logout } = useAuth();
     return (

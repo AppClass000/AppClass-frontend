@@ -22,7 +22,7 @@ export const useSchedule = (): { ScheduleData:ScheduleData[],setScheduleData: Re
             setLoading(false)
         }}
     feachData()
-    }, [ScheduleData]);
+    }, []);
 
 
     return {ScheduleData,Loading,setScheduleData};

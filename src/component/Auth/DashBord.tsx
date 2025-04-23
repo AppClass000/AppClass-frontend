@@ -3,7 +3,7 @@ import Style  from "./DashBord.module.css";
 import SignupForm from "./Signup/SignupForm";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import UserDetail from "../../pages/userdetail/UserDetail";
+import UserDetail from "../../hooks/userdetail/UserDetail";
 import { useUserData } from "../../contexts/UserDataContext";
 
 

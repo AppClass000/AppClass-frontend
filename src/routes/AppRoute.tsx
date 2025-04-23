@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Routes, Route, Navigate,useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import useFetchProfile from "../hooks/useFetchProfile";
@@ -8,7 +7,7 @@ import SettingPage from "../pages/SettingPage";
 import LoginForm from '../component/Auth/Login/LoginForm';
 import Classes from '../pages/classes/Classes';
 import Schedule from '../component/Schedule/Schedule';
-import UserDetail from '../pages/userdetail/UserDetail';
+import UserDetail from '../hooks/userdetail/UserDetail';
 import DashBord from "../component/Auth/DashBord";
 import IndexPage from "../pages/IndexPage";
 

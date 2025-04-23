@@ -1,11 +1,12 @@
 import axios from "axios";
 
-const API_SCHEDULE_URL = "http://localhost:8080/classes/schedule"
-const API_DELETE_SCHEDULE_URL = "http://localhost:8080/classes/delete"
-const API_USERDETAIL_URL = "http://localhost:8080/user/userdetail"
-const API_CHECKTOOL_URL = "http://localhost:8080/classes/checktool"
-const API_CLASSES_URL = "http://localhost:8080/classes/classes"
-const API_PROFILE_URL =  "http://localhost:8080/user/profile"
+const API_URL =process.env.BACKEND_URL
+const API_SCHEDULE_URL = `"${API_URL}/classes/schedule"`
+const API_DELETE_SCHEDULE_URL = `"${API_URL}classes/delete"`
+const API_USERDETAIL_URL = `"${API_URL}/user/userdetail"`
+const API_CHECKTOOL_URL = `"${API_URL}/classes/checktool"`
+const API_CLASSES_URL = `"${API_URL}/classes/classes"`
+const API_PROFILE_URL =  `"${API_URL}/user/profile"`
 
 
 

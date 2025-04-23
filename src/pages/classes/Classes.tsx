@@ -56,12 +56,15 @@ const Classes: React.FC = () => {
       );
       if (response.status === 204) {
         alert("登録済みです");
+        return;
       }
       console.log("classData送信に成功しました");
       alert("登録されました")
+      return;
     } catch (error) {
       console.error("classData送信エラー", classData);
       alert("授業登録失敗しました。再送信して下さい。");
+      return;
     }
   };
 
@@ -81,10 +84,12 @@ const Classes: React.FC = () => {
 
             const isMandatory = classItem.IsMandatory ? Style.IsMandatory : "";
             const isCore = classItem.IsCore ? Style.IsCore : "";
+            const isCommon = classItem.IsCommon ? Style.IsCommon : "";
+            const isIntroductory = classItem.IsIntroductory ? Style.IsIntroductory : "";
             return (
               <div className={Style.card} key={index}>
                 <div className={Style.cardContext}>
-                  <h3 className={`${Style.classTitle} ${isMandatory} ${isCore}`}>
+                  <h3 className={`${Style.classTitle} ${isMandatory} ${isCore}  ${isCommon}  ${isIntroductory}`}>
                     {classItem.ClassName}
                   </h3>
                   <div className={Style.icons}>

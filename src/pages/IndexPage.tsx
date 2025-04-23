@@ -2,7 +2,6 @@ import React ,{ useEffect } from "react";
 import Style from "./IndexPage.module.css";
 import { useUserDetail } from "../hooks/useUserDetail";
 import { getProfileUserID } from "../services/api";
-import SchoolIcon from '@mui/icons-material/School';
 import { ProfileData } from "../types/type";
 
 interface IndexPageProps {
@@ -28,13 +27,14 @@ const IndexPage:React.FunctionComponent<IndexPageProps> = ({profile,setProfile})
     };
 
     fetchData();
-  },[profile])
+  },[])
 
     return (
       <div className={Style.indexPageContainer}>
         <div className={Style.indexPageHeader} >       
-          <h1 className={Style.indexPageTitle} >AppClass</h1>
-          <SchoolIcon  className={Style.indexPageIcon}/>
+          {/* <h1 className={Style.indexPageTitle} >AppClass</h1>
+          <SchoolIcon  className={Style.indexPageIcon}/> */}
+          <img src="./AppClassTitle.webp" className={Style.indexAppClassTitle} />
         </div>
         <p>あなたの履修登録を快適にし、<br/>理想のキャンパスライフを提供します</p>
         <div className={Style.userDetailInfo} >

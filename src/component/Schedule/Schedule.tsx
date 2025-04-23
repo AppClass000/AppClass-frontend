@@ -8,7 +8,6 @@ import { useUserData } from "../../contexts/UserDataContext";
 
 const Schedule:React.FC = () => {
     const { profile } = useUserData()
-
     const { ScheduleData,setScheduleData, Loading } = useSchedule();
     const [resisteredClass,setRegisteredClass] = useState<ScheduleData | null>(null);
     const [isOpenModal,setOpenModal] = useState(false);

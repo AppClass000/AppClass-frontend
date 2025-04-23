@@ -8,7 +8,6 @@ import { useUserData } from "../../contexts/UserDataContext";
 
 
 const Sidebar:React.FC = () => {
-    const { Logout } = useAuth()
     const location = useLocation();
     const [isEditting,setIseditting] = useState(false)
     const { profile } = useUserData();
@@ -16,6 +15,7 @@ const Sidebar:React.FC = () => {
 
 
     return (
+      <div>
         <div className={Style.SidebarContainer}>
           <ul className={Style.SidebarList}> 
             <li className={Style.SidebarTop} onClick={() => setIseditting(true)} >
@@ -26,7 +26,6 @@ const Sidebar:React.FC = () => {
                 <p>{profile.email}</p>
                 </div>
             </li> 
-            {isEditting && <UserProfile  isOpen={isEditting} onClose={() => setIseditting(false)} />}
             {SidebarData.map((value,key)  => {
               const isSelected = location.pathname === value.link
                 return (
@@ -37,7 +36,7 @@ const Sidebar:React.FC = () => {
                     </li>
                 )
             })}          
-           
+            <img src="./AppClassLogo.webp"  className={Style.AppClassLogo}/>
             <div className={Style.SidebarFoot} >
               {FooterData.map((value,key) => {
                 const isSelected = location.pathname === value.link
@@ -50,10 +49,12 @@ const Sidebar:React.FC = () => {
                 )
               })}
             </div>
-            <button onClick={Logout} >ログアウト</button>
            </ul> 
-           
-        </div>
+        </div>                     
+       {isEditting && <UserProfile  isOpen={isEditting} onClose={() => setIseditting(false)} />} 
+       </div>
+
+
     )
 }
 
