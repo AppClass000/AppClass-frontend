@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+RUN npm run build 
+
 EXPOSE 3000
 
-CMD ["npm","run","build"]
+CMD ["npm", "start"] # 本番用の起動コマンドにする
