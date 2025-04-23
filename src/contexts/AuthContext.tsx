@@ -12,9 +12,11 @@ interface TokenData {
     token :string;
 }
 
-const CHECK_AUTH_URL = "http://localhost:8080/user/ckeckauth";
-const LOGIN_URL = "http://localhost:8080/user/login";
-const LOGOUT_URL = "http://localhost:8080/user/logout";
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
+const CHECK_AUTH_URL = `${API_URL}user/ckeckauth`;
+const LOGIN_URL = `${API_URL}user/login`;
+const LOGOUT_URL = `${API_URL}user/logout`;
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 

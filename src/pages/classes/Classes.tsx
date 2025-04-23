@@ -12,6 +12,8 @@ import { useUserData } from "../../contexts/UserDataContext";
 
 
 const Classes: React.FC = () => {
+  const API_URL = process.env.REACT_APP_BACKEND_URL;
+
   const { profile } = useUserData()
 
   const { classesData, Loading } = useClassesData();
@@ -47,7 +49,7 @@ const Classes: React.FC = () => {
   const registerClassData = async (classData: ClassesData) => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/classes/register",
+        `${API_URL}classes/register`,
         classData,
         {
           headers: { "Content-Type": "application/json" },

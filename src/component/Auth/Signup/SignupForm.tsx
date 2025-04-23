@@ -11,6 +11,9 @@ interface ModalProps  {
 }
 
 const SignupForm:React.FC<ModalProps> = ({setModalOpen,isModalOpen,setStep}) => {
+
+    const API_URL = process.env.REACT_APP_BACKEND_URL;
+
     const { profile,setProfile} = useUserData();
     const [userEmail,setUserEmail] = useState("")
     const [userPassword,setUserPassword] = useState("")
@@ -27,7 +30,7 @@ const SignupForm:React.FC<ModalProps> = ({setModalOpen,isModalOpen,setStep}) => 
       };
       
       try {
-           const response =  await axios.post("http://localhost:8080/user/signup",data,
+           const response =  await axios.post(`${API_URL}/user/signup`,data,
             {
                 headers :{"Content-Type":"application/json"},    
                 withCredentials : true,

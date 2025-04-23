@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const API_URL =process.env.BACKEND_URL
-const API_SCHEDULE_URL = `"${API_URL}/classes/schedule"`
-const API_DELETE_SCHEDULE_URL = `"${API_URL}classes/delete"`
-const API_USERDETAIL_URL = `"${API_URL}/user/userdetail"`
-const API_CHECKTOOL_URL = `"${API_URL}/classes/checktool"`
-const API_CLASSES_URL = `"${API_URL}/classes/classes"`
-const API_PROFILE_URL =  `"${API_URL}/user/profile"`
+const API_SCHEDULE_URL = `${API_URL}/classes/schedule`
+const API_DELETE_SCHEDULE_URL = `${API_URL}classes/delete`
+const API_USERDETAIL_URL = `${API_URL}/user/userdetail`
+const API_CHECKTOOL_URL = `${API_URL}/classes/checktool`
+const API_CLASSES_URL = `${API_URL}/classes/classes`
+const API_PROFILE_URL =  `${API_URL}/user/profile`
 
 
 
@@ -26,7 +26,7 @@ export const getScheduleData = async <T> ():Promise<T> => {
 
 export const deleteScheduleData = async <T>(data:T) => {
     try {
-        const response = await axios.post(`${API_DELETE_SCHEDULE_URL}`,
+        const response = await axios.post(API_DELETE_SCHEDULE_URL,
         data,
             {
                 headers: {"Content-Type":"application/json"},
@@ -44,7 +44,7 @@ export const deleteScheduleData = async <T>(data:T) => {
 
 export const getUserDetail = async <T>():Promise<T> => {
     try {
-        const response = await axios.get<T>(`${API_USERDETAIL_URL}`,{withCredentials:true});
+        const response = await axios.get<T>(API_USERDETAIL_URL,{withCredentials:true});
         return response.data;
     } catch (error) {
         console.error("missing get userdetail",error);
@@ -55,7 +55,7 @@ export const getUserDetail = async <T>():Promise<T> => {
 
 export const fetchClassesData = async <T>():Promise<T> => {
     try {
-      const response = await axios.get<T>(`${API_CLASSES_URL}`,{
+      const response = await axios.get<T>(API_CLASSES_URL,{
         withCredentials:true,
       });
       console.log(response.data);
@@ -69,7 +69,7 @@ export const fetchClassesData = async <T>():Promise<T> => {
 
 export const CheckToolAPI = async() => {
     try {
-        const response = await axios.get(`${API_CHECKTOOL_URL}`,
+        const response = await axios.get(API_CHECKTOOL_URL,
         {
             headers:{"Context-Type":"application/json"},
             withCredentials:true,
@@ -86,7 +86,7 @@ export const CheckToolAPI = async() => {
 export const getProfileUserID = async <T>():Promise<T> => {
    
     try {
-         const response = await axios.get<T>(`${API_PROFILE_URL}`,{
+         const response = await axios.get<T>(API_PROFILE_URL,{
         withCredentials:true,
         });
         return response.data;

@@ -12,7 +12,10 @@ const DashBord = () => {
     const { profile,setProfile} = useUserData();
     const [showSignupForm,setShowSignupForm] = useState(false);
     const [userName,setUserName] = useState("");
-    const [submitted,setSubmit] = useState(false)
+    const [submitted,setSubmit] = useState(false);
+
+    const API_URL = process.env.REACT_APP_BACKEND_URL;
+
     
     
 
@@ -29,7 +32,7 @@ const DashBord = () => {
     };
 
       try {
-        const response =  await axios.post("http://localhost:8080/user/username",data,{
+        const response =  await axios.post(`${API_URL}user/username`,data,{
             withCredentials:true,
         });
         console.log('データが送信されました');

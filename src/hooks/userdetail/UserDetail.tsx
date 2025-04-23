@@ -16,6 +16,8 @@ interface ResponseData {
 }
 
 const UserDetail:React.FC = () => {
+  const API_URL = process.env.REACT_APP_BACKEND_URL;
+
   const [faculty,setFaculty] = useState('');
   const [department,setDepartment] = useState('');
   const [course,setCourse] = useState('');
@@ -36,7 +38,7 @@ const UserDetail:React.FC = () => {
       return;
     };
 
-    try {const response = await axios.post<ResponseData>("http://localhost:8080/user/userdetail",data, {
+    try {const response = await axios.post<ResponseData>(`${API_URL}user/userdetail`,data, {
       headers: {
         'Content-Type': 'application/json',
       },
