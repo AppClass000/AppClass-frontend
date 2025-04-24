@@ -38,7 +38,7 @@ const UserDetail:React.FC = () => {
       return;
     };
 
-    try {const response = await axios.post<ResponseData>(`${API_URL}user/userdetail`,data, {
+    try {const response = await axios.post<ResponseData>(`${API_URL}/user/userdetail`,data, {
       headers: {
         'Content-Type': 'application/json',
       },

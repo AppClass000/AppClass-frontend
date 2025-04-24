@@ -14,9 +14,9 @@ interface TokenData {
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
 
-const CHECK_AUTH_URL = `${API_URL}user/ckeckauth`;
-const LOGIN_URL = `${API_URL}user/login`;
-const LOGOUT_URL = `${API_URL}user/logout`;
+const CHECK_AUTH_URL = `${API_URL}/user/ckeckauth`;
+const LOGIN_URL = `${API_URL}/user/login`;
+const LOGOUT_URL = `${API_URL}/user/logout`;
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
