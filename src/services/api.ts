@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL =process.env.BACKEND_URL
+const API_URL =process.env.REACT_APP_BACKEND_URL
 const API_SCHEDULE_URL = `${API_URL}/classes/schedule`
 const API_DELETE_SCHEDULE_URL = `${API_URL}/classes/delete`
 const API_USERDETAIL_URL = `${API_URL}/user/userdetail`
