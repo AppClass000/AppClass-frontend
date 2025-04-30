@@ -49,7 +49,7 @@ const Classes: React.FC = () => {
   const registerClassData = async (classData: ClassesData) => {
     try {
       const response = await axios.post(
-        `${API_URL}classes/register`,
+        `${API_URL}/classes/register`,
         classData,
         {
           headers: { "Content-Type": "application/json" },

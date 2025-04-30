@@ -46,8 +46,9 @@ export const AuthProvider = ({children}:{children:ReactNode}) => {
                 data,
                 {
                     headers :{"Content-Type":"application/json"},    
-                    withCredentials : true,
+                    withCredentials:true,
                 }
+                
             );
             console.log(response);
             setLoggedIn(true);

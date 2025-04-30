@@ -32,8 +32,7 @@ const IndexPage:React.FunctionComponent<IndexPageProps> = ({profile,setProfile})
     return (
       <div className={Style.indexPageContainer}>
         <div className={Style.indexPageHeader} >       
-          {/* <h1 className={Style.indexPageTitle} >AppClass</h1>
-          <SchoolIcon  className={Style.indexPageIcon}/> */}
+   
           <img src="./AppClassTitle.webp" className={Style.indexAppClassTitle} />
         </div>
         <p>あなたの履修登録を快適にし、<br/>理想のキャンパスライフを提供します</p>
